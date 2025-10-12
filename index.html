@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AntiProxy Attend | Enterprise Attendance Solution</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>AntiProxy - Attendance System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'brand-orange': '#FF6B35',
-                        'brand-purple': '#6B46C1',
-                        'brand-green': '#059669',
-                        'brand-red': '#DC2626',
-                        'brand-yellow': '#F59E0B',
-                        'brand-dark': '#111827',
-                        'brand-gray': '#374151',
+                        'slate': {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
                     },
                     fontFamily: {
-                        'space': ['Space Grotesk', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
                     },
                 }
             }
@@ -28,18 +33,18 @@
     </script>
     <style>
         body {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
         
         .gradient-text {
-            background: linear-gradient(135deg, #FF6B35 0%, #DC2626 100%);
+            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         
-        .enterprise-shadow {
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
         
         .hover-lift {
@@ -47,11 +52,11 @@
         }
         
         .hover-lift:hover {
-            transform: translateY(-8px);
+            transform: translateY(-4px);
         }
         
         .timeline-line {
-            background: linear-gradient(to bottom, #FF6B35, #DC2626, #6B46C1, #059669);
+            background: linear-gradient(to bottom, #3b82f6, #6366f1, #8b5cf6, #06b6d4);
         }
         
         .animate-float {
@@ -60,13 +65,13 @@
         
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-10px); }
         }
         
         .fade-in {
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s ease;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
         }
         
         .fade-in.visible {
@@ -80,110 +85,170 @@
         .stagger-delay-4 { transition-delay: 0.4s; }
         .stagger-delay-5 { transition-delay: 0.5s; }
         .stagger-delay-6 { transition-delay: 0.6s; }
+        
+        /* Enhanced scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #3b82f6, #6366f1);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #2563eb, #4f46e5);
+        }
     </style>
 </head>
 <body class="bg-white">
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white/95 backdrop-blur-md border-b border-gray-200 z-50">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center">
-                    <div class="w-10 h-10 bg-gradient-to-r from-brand-orange to-brand-red rounded-lg flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+    <nav class="fixed w-full bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 shadow-xl z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="flex items-center justify-center w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                         </svg>
                     </div>
-                    <span class="ml-3 text-2xl font-bold text-gray-900">AntiProxy Attend</span>
+                    <span class="text-xl font-bold text-white">AntiProxy - Attendance System</span>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-brand-orange font-medium transition-colors">Home</a>
-                    <a href="#features" class="text-gray-700 hover:text-brand-orange font-medium transition-colors">Features</a>
-                    <a href="#process" class="text-gray-700 hover:text-brand-orange font-medium transition-colors">Process</a>
-                    <a href="#pricing" class="text-gray-700 hover:text-brand-orange font-medium transition-colors">Pricing</a>
-                    <a href="#contact" class="bg-brand-orange text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-600 transition-colors">Get Started</a>
+
+                <!-- Navigation Links -->
+                <div class="flex items-center space-x-1">
+                    <a href="#home" class="px-4 py-2 text-white hover:bg-white/20 rounded-lg transition-all duration-300 font-medium transform hover:scale-105 hover:shadow-lg">
+                        <span class="flex items-center space-x-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                            </svg>
+                            <span>Home</span>
+                        </span>
+                    </a>
+                    <a href="#features" class="px-4 py-2 text-white hover:bg-white/20 rounded-lg transition-all duration-300 font-medium transform hover:scale-105 hover:shadow-lg">
+                        <span class="flex items-center space-x-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                            <span>Features</span>
+                        </span>
+                    </a>
+                    <a href="#process" class="px-4 py-2 text-white hover:bg-white/20 rounded-lg transition-all duration-300 font-medium transform hover:scale-105 hover:shadow-lg">
+                        <span class="flex items-center space-x-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                            </svg>
+                            <span>Process</span>
+                        </span>
+                    </a>
+                    <a href="#pricing" class="px-4 py-2 text-white hover:bg-white/20 rounded-lg transition-all duration-300 font-medium transform hover:scale-105 hover:shadow-lg">
+                        <span class="flex items-center space-x-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                            </svg>
+                            <span>Pricing</span>
+                        </span>
+                    </a>
+                    <a href="#contact" class="px-4 py-2 text-white hover:bg-blue-500/20 rounded-lg transition-all duration-300 font-medium border border-blue-400/30">
+                        <span class="flex items-center space-x-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                            </svg>
+                            <span>Contact</span>
+                        </span>
+                    </a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-32 pb-20 bg-gradient-to-br from-gray-50 to-gray-100">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="home" class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center p-4">
+        <div class="w-full max-w-7xl mx-auto">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="fade-in">
-                    <div class="inline-flex items-center px-4 py-2 bg-brand-orange/10 border border-brand-orange/20 rounded-full text-brand-orange font-semibold text-sm mb-8">
-                        <span class="w-2 h-2 bg-brand-orange rounded-full mr-3"></span>
-                        Enterprise-Grade Solution
+                    <div class="inline-flex items-center px-4 py-2 bg-blue-100 border border-blue-200 rounded-full text-blue-700 font-semibold text-sm mb-8">
+                        <span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                        Secure Biometric Authentication
                     </div>
-                    <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                    <h1 class="text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6">
                         Stop Attendance
                         <span class="gradient-text">Fraud</span>
                         Forever
                     </h1>
-                    <p class="text-xl text-gray-600 leading-relaxed mb-8">
+                    <p class="text-xl text-slate-600 leading-relaxed mb-8">
                         Revolutionary IoT system combining BLE proximity detection and facial recognition. 
-                        Built for enterprises demanding 99.9% accuracy and zero tolerance for proxy attendance.
+                        Built for institutions demanding 99.9% accuracy and zero tolerance for proxy attendance.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#contact" class="bg-brand-orange text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-red-600 transition-all hover-lift enterprise-shadow">
-                            Deploy Now
+                        <a href="#contact" class="bg-gradient-to-r from-slate-700 to-slate-800 text-white px-8 py-4 rounded-lg font-bold text-lg hover:from-slate-800 hover:to-slate-900 transition-all hover-lift card-shadow">
+                            Get Started
                         </a>
-                        <a href="#features" class="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-bold text-lg hover:border-brand-orange hover:text-brand-orange transition-all">
+                        <a href="#features" class="border-2 border-slate-300 text-slate-700 px-8 py-4 rounded-lg font-bold text-lg hover:border-blue-500 hover:text-blue-600 transition-all">
                             View Demo
                         </a>
                     </div>
-                    <div class="flex items-center space-x-8 mt-12 pt-8 border-t border-gray-200">
+                    <div class="flex items-center space-x-8 mt-12 pt-8 border-t border-slate-200">
                         <div>
-                            <div class="text-3xl font-bold text-gray-900">99.9%</div>
-                            <div class="text-sm text-gray-600">Accuracy Rate</div>
+                            <div class="text-3xl font-bold text-slate-900">99.9%</div>
+                            <div class="text-sm text-slate-600">Accuracy Rate</div>
                         </div>
                         <div>
-                            <div class="text-3xl font-bold text-gray-900">₹800</div>
-                            <div class="text-sm text-gray-600">Per Faculty</div>
+                            <div class="text-3xl font-bold text-slate-900">₹800</div>
+                            <div class="text-sm text-slate-600">Per Faculty</div>
                         </div>
                         <div>
-                            <div class="text-3xl font-bold text-gray-900">24/7</div>
-                            <div class="text-sm text-gray-600">Monitoring</div>
+                            <div class="text-3xl font-bold text-slate-900">24/7</div>
+                            <div class="text-sm text-slate-600">Monitoring</div>
                         </div>
                     </div>
                 </div>
                 <div class="fade-in stagger-delay-2">
                     <div class="relative">
-                        <div class="absolute -top-10 -right-10 w-72 h-72 bg-gradient-to-r from-brand-purple/20 to-brand-green/20 rounded-full blur-3xl animate-float"></div>
-                        <div class="absolute -bottom-10 -left-10 w-72 h-72 bg-gradient-to-r from-brand-orange/20 to-brand-red/20 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
-                        <div class="relative bg-white p-8 rounded-2xl enterprise-shadow">
+                        <div class="absolute -top-10 -right-10 w-72 h-72 bg-gradient-to-r from-blue-200/30 to-indigo-200/30 rounded-full blur-3xl animate-float"></div>
+                        <div class="absolute -bottom-10 -left-10 w-72 h-72 bg-gradient-to-r from-slate-200/30 to-slate-300/30 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+                        <div class="relative bg-white/95 backdrop-blur-sm p-8 rounded-2xl card-shadow border border-white/20">
                             <div class="space-y-6">
                                 <div class="flex items-center space-x-4">
-                                    <div class="w-12 h-12 bg-brand-green rounded-lg flex items-center justify-center">
-                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
                                     </div>
                                     <div>
-                                        <div class="font-semibold text-gray-900">Student Detected</div>
-                                        <div class="text-sm text-gray-600">BLE proximity verified</div>
+                                        <div class="font-semibold text-slate-900">Student Detected</div>
+                                        <div class="text-sm text-slate-600">BLE proximity verified</div>
                                     </div>
                                 </div>
                                 <div class="flex items-center space-x-4">
-                                    <div class="w-12 h-12 bg-brand-purple rounded-lg flex items-center justify-center">
-                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"/>
+                                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                         </svg>
                                     </div>
                                     <div>
-                                        <div class="font-semibold text-gray-900">Face Recognized</div>
-                                        <div class="text-sm text-gray-600">Identity confirmed</div>
+                                        <div class="font-semibold text-slate-900">Face Recognized</div>
+                                        <div class="text-sm text-slate-600">Identity confirmed</div>
                                     </div>
                                 </div>
                                 <div class="flex items-center space-x-4">
-                                    <div class="w-12 h-12 bg-brand-orange rounded-lg flex items-center justify-center">
-                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                                         </svg>
                                     </div>
                                     <div>
-                                        <div class="font-semibold text-gray-900">Attendance Marked</div>
-                                        <div class="text-sm text-gray-600">Synced to cloud database</div>
+                                        <div class="font-semibold text-slate-900">Attendance Marked</div>
+                                        <div class="text-sm text-slate-600">Synced to cloud database</div>
                                     </div>
                                 </div>
                             </div>
@@ -198,50 +263,50 @@
     <section id="features" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-20 fade-in">
-                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                    Enterprise-Grade
+                <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+                    Advanced
                     <span class="gradient-text">Security</span>
                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
                     Military-grade precision meets educational efficiency. Every feature designed for institutions that demand excellence.
                 </p>
             </div>
 
             <div class="grid lg:grid-cols-3 gap-8">
-                <div class="bg-gradient-to-br from-brand-orange to-brand-red p-8 rounded-2xl text-white hover-lift fade-in stagger-delay-1">
-                    <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                <div class="bg-white rounded-lg shadow-lg p-8 border border-slate-100 transform hover:scale-105 transition-all duration-300 hover:shadow-xl group animate-fade-in-up cursor-pointer" style="animation-delay: 0.1s">
+                    <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-200 transition-colors duration-300">
+                        <svg class="w-8 h-8 text-blue-600 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Dual Authentication</h3>
-                    <p class="text-white/90 leading-relaxed">
+                    <h3 class="text-2xl font-bold mb-4 text-slate-900">Dual Authentication</h3>
+                    <p class="text-slate-600 leading-relaxed">
                         BLE proximity + facial recognition creates an unbreachable security layer. 
                         Zero false positives, zero proxy attendance.
                     </p>
                 </div>
 
-                <div class="bg-gradient-to-br from-brand-purple to-indigo-600 p-8 rounded-2xl text-white hover-lift fade-in stagger-delay-2">
-                    <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                <div class="bg-white rounded-lg shadow-lg p-8 border border-slate-100 transform hover:scale-105 transition-all duration-300 hover:shadow-xl group animate-fade-in-up cursor-pointer" style="animation-delay: 0.2s">
+                    <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-green-200 transition-colors duration-300">
+                        <svg class="w-8 h-8 text-green-600 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Real-Time Analytics</h3>
-                    <p class="text-white/90 leading-relaxed">
+                    <h3 class="text-2xl font-bold mb-4 text-slate-900">Real-Time Analytics</h3>
+                    <p class="text-slate-600 leading-relaxed">
                         Live dashboard with attendance patterns, alerts, and predictive insights. 
                         Make data-driven decisions instantly.
                     </p>
                 </div>
 
-                <div class="bg-gradient-to-br from-brand-green to-emerald-600 p-8 rounded-2xl text-white hover-lift fade-in stagger-delay-3">
-                    <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                <div class="bg-white rounded-lg shadow-lg p-8 border border-slate-100 transform hover:scale-105 transition-all duration-300 hover:shadow-xl group animate-fade-in-up cursor-pointer" style="animation-delay: 0.3s">
+                    <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-200 transition-colors duration-300">
+                        <svg class="w-8 h-8 text-purple-600 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Lightning Fast</h3>
-                    <p class="text-white/90 leading-relaxed">
+                    <h3 class="text-2xl font-bold mb-4 text-slate-900">Lightning Fast</h3>
+                    <p class="text-slate-600 leading-relaxed">
                         Sub-second response times. Cloud-synced data. 
                         Built to handle thousands of students simultaneously.
                     </p>
@@ -250,73 +315,73 @@
 
             <div class="grid lg:grid-cols-2 gap-12 mt-16">
                 <div class="fade-in stagger-delay-4">
-                    <div class="bg-gray-50 p-8 rounded-2xl">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Technical Specifications</h3>
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-6">Technical Specifications</h3>
                         <div class="space-y-4">
-                            <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                                <span class="font-semibold text-gray-700">Hardware</span>
-                                <span class="text-gray-900">ESP32 BLE Beacon</span>
+                            <div class="flex justify-between items-center py-3 border-b border-slate-200">
+                                <span class="font-semibold text-slate-700">Hardware</span>
+                                <span class="text-slate-900">ESP32 BLE Beacon</span>
                             </div>
-                            <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                                <span class="font-semibold text-gray-700">Range</span>
-                                <span class="text-gray-900">30-50 meters</span>
+                            <div class="flex justify-between items-center py-3 border-b border-slate-200">
+                                <span class="font-semibold text-slate-700">Range</span>
+                                <span class="text-slate-900">30-50 meters</span>
                             </div>
-                            <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                                <span class="font-semibold text-gray-700">Accuracy</span>
-                                <span class="text-gray-900">99.9%</span>
+                            <div class="flex justify-between items-center py-3 border-b border-slate-200">
+                                <span class="font-semibold text-slate-700">Accuracy</span>
+                                <span class="text-slate-900">99.9%</span>
                             </div>
-                            <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                                <span class="font-semibold text-gray-700">Response Time</span>
-                                <span class="text-gray-900">&lt; 0.5 seconds</span>
+                            <div class="flex justify-between items-center py-3 border-b border-slate-200">
+                                <span class="font-semibold text-slate-700">Response Time</span>
+                                <span class="text-slate-900">&lt; 0.5 seconds</span>
                             </div>
                             <div class="flex justify-between items-center py-3">
-                                <span class="font-semibold text-gray-700">Capacity</span>
-                                <span class="text-gray-900">500+ students/class</span>
+                                <span class="font-semibold text-slate-700">Capacity</span>
+                                <span class="text-slate-900">500+ students/class</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="fade-in stagger-delay-5">
-                    <div class="bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-2xl text-white">
+                    <div class="bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-2xl text-white card-shadow">
                         <h3 class="text-2xl font-bold mb-6">Security Features</h3>
                         <div class="space-y-4">
                             <div class="flex items-center space-x-3">
-                                <div class="w-6 h-6 bg-brand-green rounded-full flex items-center justify-center">
-                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
                                 <span>End-to-end encryption</span>
                             </div>
                             <div class="flex items-center space-x-3">
-                                <div class="w-6 h-6 bg-brand-green rounded-full flex items-center justify-center">
-                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
                                 <span>Biometric data protection</span>
                             </div>
                             <div class="flex items-center space-x-3">
-                                <div class="w-6 h-6 bg-brand-green rounded-full flex items-center justify-center">
-                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
                                 <span>GDPR compliant</span>
                             </div>
                             <div class="flex items-center space-x-3">
-                                <div class="w-6 h-6 bg-brand-green rounded-full flex items-center justify-center">
-                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
                                 <span>Multi-factor authentication</span>
                             </div>
                             <div class="flex items-center space-x-3">
-                                <div class="w-6 h-6 bg-brand-green rounded-full flex items-center justify-center">
-                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
                                 <span>Audit trail & logging</span>
@@ -329,13 +394,13 @@
     </section>
 
     <!-- Process Timeline -->
-    <section id="process" class="py-24 bg-gray-900 text-white">
+    <section id="process" class="py-24 bg-gradient-to-br from-slate-800 to-slate-900 text-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-20 fade-in">
                 <h2 class="text-4xl lg:text-5xl font-bold mb-6">
                     How It Works
                 </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto">
                     Four-step process that eliminates attendance fraud while maintaining user experience.
                 </p>
             </div>
@@ -347,21 +412,21 @@
                     <!-- Step 1 -->
                     <div class="relative flex items-center fade-in stagger-delay-1">
                         <div class="flex-1 pr-8 text-right">
-                            <div class="bg-gradient-to-r from-brand-orange to-brand-red p-6 rounded-2xl">
+                            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
                                 <h3 class="text-2xl font-bold mb-3">Student Enters Classroom</h3>
                                 <p class="text-white/90">ESP32 BLE beacon automatically detects student's smartphone within 30-meter radius. Proximity verification initiates attendance process.</p>
                             </div>
                         </div>
-                        <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-brand-orange rounded-full flex items-center justify-center text-2xl font-bold">01</div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-2xl font-bold">01</div>
                         <div class="flex-1 pl-8"></div>
                     </div>
 
                     <!-- Step 2 -->
                     <div class="relative flex items-center fade-in stagger-delay-2">
                         <div class="flex-1 pr-8"></div>
-                        <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-brand-red rounded-full flex items-center justify-center text-2xl font-bold">02</div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-indigo-500 rounded-full flex items-center justify-center text-2xl font-bold">02</div>
                         <div class="flex-1 pl-8">
-                            <div class="bg-gradient-to-r from-brand-red to-brand-purple p-6 rounded-2xl">
+                            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
                                 <h3 class="text-2xl font-bold mb-3">Database Verification</h3>
                                 <p class="text-white/90">System cross-references detected device with enrolled student database. Validates student credentials and class schedule.</p>
                             </div>
@@ -371,21 +436,21 @@
                     <!-- Step 3 -->
                     <div class="relative flex items-center fade-in stagger-delay-3">
                         <div class="flex-1 pr-8 text-right">
-                            <div class="bg-gradient-to-r from-brand-purple to-indigo-600 p-6 rounded-2xl">
+                            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
                                 <h3 class="text-2xl font-bold mb-3">Facial Recognition</h3>
                                 <p class="text-white/90">Advanced ML algorithms perform facial recognition to confirm student identity. Prevents proxy attendance and unauthorized access.</p>
                             </div>
                         </div>
-                        <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-brand-purple rounded-full flex items-center justify-center text-2xl font-bold">03</div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center text-2xl font-bold">03</div>
                         <div class="flex-1 pl-8"></div>
                     </div>
 
                     <!-- Step 4 -->
                     <div class="relative flex items-center fade-in stagger-delay-4">
                         <div class="flex-1 pr-8"></div>
-                        <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-brand-green rounded-full flex items-center justify-center text-2xl font-bold">04</div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-cyan-500 rounded-full flex items-center justify-center text-2xl font-bold">04</div>
                         <div class="flex-1 pl-8">
-                            <div class="bg-gradient-to-r from-brand-green to-emerald-600 p-6 rounded-2xl">
+                            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
                                 <h3 class="text-2xl font-bold mb-3">Attendance Recorded</h3>
                                 <p class="text-white/90">Upon successful verification, attendance is instantly recorded in cloud database with timestamp, location, and verification method.</p>
                             </div>
@@ -400,60 +465,60 @@
     <section id="pricing" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-20 fade-in">
-                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                    Enterprise Pricing
+                <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+                    Transparent Pricing
                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
                     Transparent, scalable pricing designed for educational institutions of all sizes.
                 </p>
             </div>
 
-            <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-12 text-white enterprise-shadow fade-in">
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-12 text-white card-shadow fade-in">
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
-                        <div class="inline-flex items-center px-4 py-2 bg-brand-orange/20 border border-brand-orange/30 rounded-full text-brand-orange font-semibold text-sm mb-6">
-                            Enterprise Solution
+                        <div class="inline-flex items-center px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 font-semibold text-sm mb-6">
+                            Complete Solution
                         </div>
                         <h3 class="text-4xl font-bold mb-4">₹700-800 per Faculty</h3>
-                        <p class="text-gray-300 text-lg mb-8">Complete hardware and software solution. No hidden costs, no recurring fees.</p>
+                        <p class="text-slate-300 text-lg mb-8">Complete hardware and software solution. No hidden costs, no recurring fees.</p>
                         
                         <div class="space-y-4">
                             <div class="flex items-center space-x-3">
-                                <div class="w-6 h-6 bg-brand-green rounded-full flex items-center justify-center">
-                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
                                 <span>ESP32 BLE beacon hardware</span>
                             </div>
                             <div class="flex items-center space-x-3">
-                                <div class="w-6 h-6 bg-brand-green rounded-full flex items-center justify-center">
-                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
                                 <span>Complete software suite</span>
                             </div>
                             <div class="flex items-center space-x-3">
-                                <div class="w-6 h-6 bg-brand-green rounded-full flex items-center justify-center">
-                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
                                 <span>Cloud hosting & maintenance</span>
                             </div>
                             <div class="flex items-center space-x-3">
-                                <div class="w-6 h-6 bg-brand-green rounded-full flex items-center justify-center">
-                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
                                 <span>24/7 technical support</span>
                             </div>
                             <div class="flex items-center space-x-3">
-                                <div class="w-6 h-6 bg-brand-green rounded-full flex items-center justify-center">
-                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
                                 <span>Free updates & upgrades</span>
@@ -461,24 +526,24 @@
                         </div>
                     </div>
                     
-                    <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
+                    <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20">
                         <h4 class="text-2xl font-bold mb-6">ROI Calculator</h4>
                         <div class="space-y-4">
                             <div class="flex justify-between items-center py-3 border-b border-white/20">
-                                <span class="text-gray-300">Traditional system cost/year</span>
+                                <span class="text-slate-300">Traditional system cost/year</span>
                                 <span class="font-semibold">₹50,000</span>
                             </div>
                             <div class="flex justify-between items-center py-3 border-b border-white/20">
-                                <span class="text-gray-300">AntiProxy Attend (one-time)</span>
-                                <span class="font-semibold text-brand-green">₹800</span>
+                                <span class="text-slate-300">AntiProxy (one-time)</span>
+                                <span class="font-semibold text-green-400">₹800</span>
                             </div>
                             <div class="flex justify-between items-center py-3 border-b border-white/20">
-                                <span class="text-gray-300">Time saved/month</span>
+                                <span class="text-slate-300">Time saved/month</span>
                                 <span class="font-semibold">40 hours</span>
                             </div>
                             <div class="flex justify-between items-center py-3">
-                                <span class="text-gray-300 font-bold">Total savings/year</span>
-                                <span class="font-bold text-2xl text-brand-green">₹2,50,000</span>
+                                <span class="text-slate-300 font-bold">Total savings/year</span>
+                                <span class="font-bold text-2xl text-green-400">₹2,50,000</span>
                             </div>
                         </div>
                     </div>
@@ -488,7 +553,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-gradient-to-br from-brand-orange to-brand-red">
+    <section id="contact" class="py-24 bg-gradient-to-br from-slate-700 to-slate-800">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="text-white fade-in">
@@ -496,25 +561,24 @@
                         Ready to Deploy?
                     </h2>
                     <p class="text-xl text-white/90 mb-8">
-                        Join 500+ institutions already using AntiProxy Attend to eliminate attendance fraud and save thousands of hours.
+                        Join 500+ institutions already using AntiProxy to eliminate attendance fraud and save thousands of hours.
                     </p>
                     <div class="space-y-4">
                         <div class="flex items-center space-x-4">
                             <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
-                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.948 1.316h-.870a1 1 0 01-.870-1.316l1.498-4.493A1 1 0 0110.72 3H13a2 2 0 012 2v1M3 5v14a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v1" />
                                 </svg>
                             </div>
                             <div>
                                 <div class="font-semibold">24/7 Support</div>
-                                <div class="text-white/80">+91 9372080623</div>
+                                <div class="text-white/80">+91 9876543210</div>
                             </div>
                         </div>
                         <div class="flex items-center space-x-4">
                             <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
-                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
                             </div>
                             <div>
@@ -525,26 +589,26 @@
                     </div>
                 </div>
                 
-                <div class="bg-white p-8 rounded-2xl enterprise-shadow fade-in stagger-delay-2">
+                <div class="bg-white/95 backdrop-blur-sm p-8 rounded-2xl card-shadow border border-white/20 fade-in stagger-delay-2">
                     <form class="space-y-6">
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
-                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-brand-orange transition-colors" required>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Full Name</label>
+                                <input type="text" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors" required>
                             </div>
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
-                                <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-brand-orange transition-colors" required>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Phone Number</label>
+                                <input type="tel" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors" required>
                             </div>
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Institution Name</label>
-                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-brand-orange transition-colors" required>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Institution Name</label>
+                            <input type="text" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors" required>
                         </div>
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">Number of Faculty</label>
-                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-brand-orange transition-colors">
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Number of Faculty</label>
+                                <select class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors">
                                     <option>1-10</option>
                                     <option>11-50</option>
                                     <option>51-100</option>
@@ -552,8 +616,8 @@
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">Implementation Timeline</label>
-                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-brand-orange transition-colors">
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Implementation Timeline</label>
+                                <select class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors">
                                     <option>Immediate</option>
                                     <option>1-3 months</option>
                                     <option>3-6 months</option>
@@ -562,10 +626,10 @@
                             </div>
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Requirements</label>
-                            <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-brand-orange transition-colors" placeholder="Tell us about your specific requirements..."></textarea>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Requirements</label>
+                            <textarea rows="4" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors" placeholder="Tell us about your specific requirements..."></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-brand-orange text-white py-4 rounded-lg font-bold text-lg hover:bg-red-600 transition-colors">
+                        <button type="submit" class="w-full bg-gradient-to-r from-slate-700 to-slate-800 text-white py-4 rounded-lg font-bold text-lg hover:from-slate-800 hover:to-slate-900 transition-all card-shadow">
                             Get Enterprise Quote
                         </button>
                     </form>
@@ -575,25 +639,25 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-16">
+    <footer class="bg-slate-900 text-white py-16">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid lg:grid-cols-4 gap-8 mb-12">
                 <div>
                     <div class="flex items-center mb-6">
-                        <div class="w-10 h-10 bg-gradient-to-r from-brand-orange to-brand-red rounded-lg flex items-center justify-center">
-                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                        <div class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                             </svg>
                         </div>
-                        <span class="ml-3 text-2xl font-bold">AntiProxy Attend</span>
+                        <span class="ml-3 text-2xl font-bold">AntiProxy</span>
                     </div>
-                    <p class="text-gray-400 leading-relaxed">
-                        Enterprise-grade IoT attendance solution eliminating fraud and saving institutions thousands of hours annually.
+                    <p class="text-slate-400 leading-relaxed">
+                        Advanced IoT attendance solution eliminating fraud and saving institutions thousands of hours annually.
                     </p>
                 </div>
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Technology</h4>
-                    <ul class="space-y-2 text-gray-400">
+                    <ul class="space-y-2 text-slate-400">
                         <li>IoT Hardware</li>
                         <li>Machine Learning</li>
                         <li>Cloud Computing</li>
@@ -602,7 +666,7 @@
                 </div>
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Features</h4>
-                    <ul class="space-y-2 text-gray-400">
+                    <ul class="space-y-2 text-slate-400">
                         <li>Dual Authentication</li>
                         <li>Real-time Analytics</li>
                         <li>Fraud Prevention</li>
@@ -611,7 +675,7 @@
                 </div>
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Support</h4>
-                    <ul class="space-y-2 text-gray-400">
+                    <ul class="space-y-2 text-slate-400">
                         <li>Technical Support</li>
                         <li>Implementation</li>
                         <li>Training</li>
@@ -619,8 +683,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 TalkSick Group. Enterprise IoT solutions for educational excellence.</p>
+            <div class="border-t border-slate-800 pt-8 text-center text-slate-400">
+                <p>&copy; 2024 AntiProxy. Advanced IoT solutions for educational excellence.</p>
             </div>
         </div>
     </footer>
@@ -640,10 +704,10 @@
             });
         });
 
-        // Intersection Observer for animations
+        // Enhanced Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+            rootMargin: '0px 0px -50px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -654,11 +718,18 @@
             });
         }, observerOptions);
 
+        // Observe all fade-in elements
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
 
-        // Form submission
+        // Add fade-in-up animation class
+        const fadeInUpElements = document.querySelectorAll('.animate-fade-in-up');
+        fadeInUpElements.forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form submission with enhanced feedback
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
             const button = this.querySelector('button[type="submit"]');
@@ -682,22 +753,78 @@
             }, 1500);
         });
 
-        // Header background on scroll
+        // Enhanced header background on scroll
         let lastScroll = 0;
         window.addEventListener('scroll', () => {
             const header = document.querySelector('nav');
             const currentScroll = window.pageYOffset;
             
             if (currentScroll > 100) {
-                header.classList.add('bg-white', 'shadow-lg');
-                header.classList.remove('bg-white/95');
+                header.classList.add('shadow-2xl');
+                header.classList.remove('shadow-xl');
             } else {
-                header.classList.remove('bg-white', 'shadow-lg');
-                header.classList.add('bg-white/95');
+                header.classList.remove('shadow-2xl');
+                header.classList.add('shadow-xl');
             }
             
             lastScroll = currentScroll;
         });
+
+        // Add custom keyframes for animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fade-in-up {
+                0% {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            @keyframes slide-up {
+                0% {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            @keyframes pulse-soft {
+                0%, 100% {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0.8;
+                }
+            }
+            
+            .animate-fade-in-up {
+                animation: fade-in-up 0.6s ease-out forwards;
+                opacity: 0;
+            }
+            
+            .animate-slide-up {
+                animation: slide-up 0.8s ease-out forwards;
+            }
+            
+            .animate-pulse-soft {
+                animation: pulse-soft 2s ease-in-out infinite;
+            }
+            
+            /* Smooth transitions for all interactive elements */
+            * {
+                transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                transition-duration: 150ms;
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
