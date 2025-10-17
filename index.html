@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AntiProxy - Attendance System</title>
+    <title>AntiProxy</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -116,10 +116,11 @@
                 <!-- Logo -->
                 <div class="flex items-center space-x-2 sm:space-x-3">
                     <div class="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-white/20 backdrop-blur-sm rounded-lg">
-                        <img src="logo.png" alt="AntiProxy Logo" class="w-4 h-4 sm:w-6 sm:h-6">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
                     </div>
-                    <span class="text-sm sm:text-lg lg:text-xl font-bold text-white hidden sm:block">AntiProxy - Attendance System</span>
-                    <span class="text-sm font-bold text-white sm:hidden">AntiProxy</span>
+                    <span class="text-sm sm:text-lg lg:text-xl font-bold text-white">AntiProxy</span>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -155,14 +156,6 @@
                             <span>Process</span>
                         </span>
                     </a>
-                    <a href="#pricing" class="px-3 py-2 text-white hover:bg-white/20 rounded-lg transition-all duration-300 font-medium transform hover:scale-105 hover:shadow-lg">
-                        <span class="flex items-center space-x-2">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                            </svg>
-                            <span>Pricing</span>
-                        </span>
-                    </a>
                     <a href="#contact" class="px-3 py-2 text-white hover:bg-white/20 rounded-lg transition-all duration-300 font-medium transform hover:scale-105 hover:shadow-lg">
                         <span class="flex items-center space-x-2">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -171,7 +164,7 @@
                             <span>Contact</span>
                         </span>
                     </a>
-                    <a href="https://app.antiproxy.xyz" target="_blank" class="px-4 py-2 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-all duration-300 font-semibold transform hover:scale-105 hover:shadow-lg border border-blue-500/30">
+                    <a href="https://app.antiproxy.xyz" target="_blank" class="px-4 py-2 bg-gradient-to-r from-purple-600 to-purple-700 text-white hover:from-purple-700 hover:to-purple-800 rounded-lg transition-all duration-300 font-semibold transform hover:scale-105 hover:shadow-lg border border-purple-500/30">
                         <span class="flex items-center space-x-2">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
@@ -209,14 +202,6 @@
                             <span>Process</span>
                         </span>
                     </a>
-                    <a href="#pricing" class="block px-4 py-3 text-white hover:bg-white/20 rounded-lg transition-colors">
-                        <span class="flex items-center space-x-3">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                            </svg>
-                            <span>Pricing</span>
-                        </span>
-                    </a>
                     <a href="#contact" class="block px-4 py-3 text-white hover:bg-white/20 rounded-lg transition-colors">
                         <span class="flex items-center space-x-3">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -225,7 +210,7 @@
                             <span>Contact</span>
                         </span>
                     </a>
-                    <a href="https://app.antiproxy.xyz" target="_blank" class="block px-4 py-3 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-colors font-semibold">
+                    <a href="https://app.antiproxy.xyz" target="_blank" class="block px-4 py-3 bg-gradient-to-r from-purple-600 to-purple-700 text-white hover:from-purple-700 hover:to-purple-800 rounded-lg transition-colors font-semibold">
                         <span class="flex items-center space-x-3">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
@@ -244,9 +229,8 @@
             <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                 <div class="fade-in">
                     <div class="flex flex-col sm:flex-row items-start sm:items-center mb-6 sm:mb-8">
-                        <img src="namedlogo.png" alt="AntiProxy" class="h-8 sm:h-12 mb-4 sm:mb-0 sm:mr-4">
-                        <div class="inline-flex items-center px-3 sm:px-4 py-2 bg-blue-100 border border-blue-200 rounded-full text-blue-700 font-semibold text-xs sm:text-sm">
-                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2 sm:mr-3"></span>
+                        <div class="inline-flex items-center px-3 sm:px-4 py-2 bg-purple-100 border border-purple-200 rounded-full text-purple-700 font-semibold text-xs sm:text-sm">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full mr-2 sm:mr-3"></span>
                             <span class="hidden sm:inline">Secure Biometric Authentication</span>
                             <span class="sm:hidden">Secure Authentication</span>
                         </div>
@@ -270,7 +254,7 @@
                     </div>
                     <div class="grid grid-cols-3 gap-4 sm:gap-8 mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-slate-200">
                         <div class="text-center">
-                            <div class="text-2xl sm:text-3xl font-bold text-slate-900">99.9%</div>
+                            <div class="text-2xl sm:text-3xl font-bold text-slate-900">95%</div>
                             <div class="text-xs sm:text-sm text-slate-600">Accuracy</div>
                         </div>
                         <div class="text-center">
@@ -385,6 +369,26 @@
                 </div>
             </div>
 
+            <!-- Video Demo Section -->
+            <div class="mt-16 fade-in">
+                <div class="text-center mb-8">
+                    <h3 class="text-3xl font-bold text-slate-900 mb-4">Watch How It Works</h3>
+                    <p class="text-lg text-slate-600">See AntiProxy in action - from setup to attendance marking</p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl" style="padding-bottom: 56.25%; height: 0;">
+                        <iframe 
+                            class="absolute top-0 left-0 w-full h-full"
+                            src="https://www.youtube.com/embed/z9zvynfGliU" 
+                            title="AntiProxy Demo Video" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
             <div class="grid lg:grid-cols-2 gap-12 mt-16">
                 <div class="fade-in stagger-delay-4">
                     <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200">
@@ -400,7 +404,7 @@
                             </div>
                             <div class="flex justify-between items-center py-3 border-b border-slate-200">
                                 <span class="font-semibold text-slate-700">Accuracy</span>
-                                <span class="text-slate-900">99.9%</span>
+                                <span class="text-slate-900">95%</span>
                             </div>
                             <div class="flex justify-between items-center py-3 border-b border-slate-200">
                                 <span class="font-semibold text-slate-700">Response Time</span>
@@ -533,91 +537,50 @@
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="py-12 sm:py-16 lg:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 sm:mb-16 lg:mb-20 fade-in">
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
-                    Transparent Pricing
-                </h2>
-                <p class="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto px-4">
-                    Transparent, scalable pricing designed for educational institutions of all sizes.
-                </p>
-            </div>
-
-            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 text-white card-shadow fade-in">
-                <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-                    <div>
-                        <div class="inline-flex items-center px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 font-semibold text-sm mb-6">
-                            Complete Solution
-                        </div>
-                        <h3 class="text-4xl font-bold mb-4">₹700-800 per Faculty</h3>
-                        <p class="text-slate-300 text-lg mb-8">Complete hardware and software solution. No hidden costs, no recurring fees.</p>
-                        
-                        <div class="space-y-4">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                    </svg>
-                                </div>
-                                <span>ESP32 BLE beacon hardware</span>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                    </svg>
-                                </div>
-                                <span>Complete software suite</span>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                    </svg>
-                                </div>
-                                <span>Cloud hosting & maintenance</span>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                    </svg>
-                                </div>
-                                <span>24/7 technical support</span>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                    </svg>
-                                </div>
-                                <span>Free updates & upgrades</span>
-                            </div>
-                        </div>
+    <!-- Proceed to App Section -->
+    <section id="app" class="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-purple-900 via-purple-800 to-slate-900">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="fade-in">
+                <div class="mb-8">
+                    <div class="inline-flex items-center px-4 py-2 bg-purple-500/20 border border-purple-400/30 rounded-full text-purple-200 font-semibold text-sm mb-6">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        Ready to Get Started?
                     </div>
-                    
-                    <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20">
-                        <h4 class="text-2xl font-bold mb-6">ROI Calculator</h4>
-                        <div class="space-y-4">
-                            <div class="flex justify-between items-center py-3 border-b border-white/20">
-                                <span class="text-slate-300">Traditional system cost/year</span>
-                                <span class="font-semibold">₹50,000</span>
-                            </div>
-                            <div class="flex justify-between items-center py-3 border-b border-white/20">
-                                <span class="text-slate-300">AntiProxy (one-time)*</span>
-                                <span class="font-semibold text-green-400">₹800</span>
-                            </div>
-                            <div class="flex justify-between items-center py-3 border-b border-white/20">
-                                <span class="text-slate-300">Time saved/month</span>
-                                <span class="font-semibold">40 hours</span>
-                            </div>
-                            <div class="flex justify-between items-center py-3">
-                                <span class="text-slate-300 font-bold">Total savings/year</span>
-                                <span class="font-bold text-2xl text-green-400">₹2,50,000</span>
-                            </div>
-                        </div>
+                </div>
+                
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+                    Access Your Dashboard
+                </h2>
+                <p class="text-xl sm:text-2xl text-purple-100 mb-12 max-w-3xl mx-auto">
+                    Experience the power of smart attendance management. Sign in to mark attendance, manage lectures, and view analytics in real-time.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
+                    <a href="https://app.antiproxy.xyz" target="_blank" class="group relative inline-flex items-center justify-center px-12 py-6 overflow-hidden font-bold text-white bg-gradient-to-r from-purple-600 to-purple-700 rounded-2xl shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-purple-500/50">
+                        <span class="absolute inset-0 w-full h-full bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="relative flex items-center text-2xl">
+                            <svg class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                            </svg>
+                            Proceed to App
+                        </span>
+                    </a>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-16 text-white">
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+                        <div class="text-3xl font-bold mb-2">Students</div>
+                        <p class="text-purple-200">Mark attendance with facial recognition</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+                        <div class="text-3xl font-bold mb-2">Faculty</div>
+                        <p class="text-purple-200">Manage lectures and view reports</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+                        <div class="text-3xl font-bold mb-2">Admins</div>
+                        <p class="text-purple-200">Monitor and manage the system</p>
                     </div>
                 </div>
             </div>
@@ -717,7 +680,9 @@
                 <div class="sm:col-span-2 lg:col-span-1">
                     <div class="flex items-center mb-4 sm:mb-6">
                         <div class="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
-                            <img src="logo.png" alt="AntiProxy Logo" class="w-4 h-4 sm:w-6 sm:h-6">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
                         </div>
                         <span class="ml-2 sm:ml-3 text-lg sm:text-xl lg:text-2xl font-bold">AntiProxy</span>
                     </div>
